@@ -1,29 +1,19 @@
 ---
-import "../styles/global.css";
-import Header from "../components/header.astro";
-import Footer from "../components/footer.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const todosPosts = await Astro.glob("./posts/*.md");
 const tituloPagina = "Blogzinho";
 ---
 
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
-        <title>{tituloPagina}</title>
-    </head>
-    <body>
-        <h1>Site da Rora!</h1>
-        <Header />
-        <h2>Com um blog acompanhando minha jornada :3</h2>
-
-        <ul>
-            <li><a href="/posts/post-1">Post 1</a></li>
-        </ul>
-        <Footer />
-        <script>
-            import "../scripts/menu.js";
-        </script>
-    </body>
-</html>
+<BaseLayout tituloPagina={tituloPagina}>
+    <h2>Com um blog acompanhando minha jornada :3</h2>
+    <ul>
+        {
+            todosPosts.map((post) => (
+                <li>
+                    <a href={post.url}>{post.frontmatter.title}</a>
+                </li>
+            ))
+        }
+    </ul>
+</BaseLayout>

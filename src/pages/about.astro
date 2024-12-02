@@ -1,7 +1,5 @@
 ---
-import "../styles/global.css";
-import Header from "../components/header.astro";
-import Footer from "../components/footer.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 const tituloPagina = "Sobre Mim";
 
 const identidade = {
@@ -18,45 +16,29 @@ const identidade = {
 const habilidades = ["HTML", "CSS", "Gleam", "Rust", "Regex"];
 ---
 
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
-        <title>{tituloPagina}</title>
-    </head>
-    <body>
-        <h1>Site da Rora!</h1>
-        <Header />
+<BaseLayout tituloPagina={tituloPagina}>
+    <h2>{tituloPagina}...</h2>
+    <h2>... e meu site Astro!</h2>
 
-        <h2>{tituloPagina}...</h2>
-        <h2>... e meu site Astro!</h2>
+    <p>
+        Espero que tudo funcione, depois do Netlify ter banido minha conta de
+        graça??
+    </p>
+    <p>Obrigada Cloudflare Pages :3</p>
 
-        <p>
-            Espero que tudo funcione, depois do Netlify ter banido minha conta
-            de graça??
-        </p>
-        <p>Obrigada Cloudflare Pages :3</p>
-
-        <h3>Alguns fatos sobre mim...</h3>
-        <p>Meu nome é {identidade.primeiroNome}</p>
-        <p>Moro no {identidade.pais}, e sou uma {identidade.ocupacao}</p>
-        {
-            identidade.hobbies.length >= 2 && (
-                <p>
-                    Dois dos meus hobbies são {identidade.hobbies[0]} e{" "}
-                    {identidade.hobbies[1]}
-                </p>
-            )
-        }
-        <h3>Minhas habilidades são:</h3>
-        <ul>
-            {habilidades.map((habilidade) => <li>{habilidade}</li>)}
-        </ul>
-        <Footer />
-        <script>
-            import "../scripts/menu.js";
-        </script>
-    </body>
-</html>
+    <h3>Alguns fatos sobre mim...</h3>
+    <p>Meu nome é {identidade.primeiroNome}</p>
+    <p>Moro no {identidade.pais}, e sou uma {identidade.ocupacao}</p>
+    {
+        identidade.hobbies.length >= 2 && (
+            <p>
+                Dois dos meus hobbies são {identidade.hobbies[0]} e{" "}
+                {identidade.hobbies[1]}
+            </p>
+        )
+    }
+    <h3>Minhas habilidades são:</h3>
+    <ul>
+        {habilidades.map((habilidade) => <li>{habilidade}</li>)}
+    </ul>
+</BaseLayout>

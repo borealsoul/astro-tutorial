@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: 'Meu primeiro post no blog'
 pubDate: 2024-12-02
 description: 'Esse é meu primeiro post no tutorial de Astro!'
@@ -6,11 +7,8 @@ author: 'Aurora Júlia'
 image:
     url: 'https://docs.astro.build/assets/rose.webp'
     alt: 'O logo do Astro em um fundo preto, com um brilho rosa.'
-tags: ["astro", "blogging", "learning in public"]
+tags: ["astro", "blog", "aprendendo em público"]
 ---
-# Meu Primeiro Post no Blog
-
-Publicado em: 2024-12-02
 
 Bem-vindo ao meu _novo blog_ aprendendo sobre Astro!
 
