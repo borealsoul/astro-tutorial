@@ -1,0 +1,23 @@
+---
+import Social from "./social.astro";
+---
+
+<style>
+    footer {
+        display: flex;
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+</style>
+
+<footer>
+    <p>
+        <Social
+            plataforma="bsky"
+            tld="app"
+            usuario="profile/borealsoul.space"
+        />
+
+        <Social plataforma="github" tld="" usuario="borealsoul" />
+    </p>
+</footer>

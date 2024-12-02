@@ -1,4 +1,6 @@
 ---
+import Navigation from "../components/navigation.astro";
+import Footer from "../components/footer.astro";
 const tituloPagina = "Site da Rora!";
 ---
 
@@ -11,9 +13,8 @@ const tituloPagina = "Site da Rora!";
         <title>{tituloPagina}</title>
     </head>
     <body>
-        <a href="/">Home</a>
-        <a href="/about/">Sobre</a>
-        <a href="/blog/">Blog</a>
+        <Navigation />
         <h1>{tituloPagina}</h1>
+        <Footer />
     </body>
 </html>
