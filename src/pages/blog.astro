@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import Header from "../components/header.astro";
+import Footer from "../components/footer.astro";
 const tituloPagina = "Blogzinho";
 ---
 
@@ -20,5 +21,9 @@ const tituloPagina = "Blogzinho";
         <ul>
             <li><a href="/posts/post-1">Post 1</a></li>
         </ul>
+        <Footer />
+        <script>
+            import "../scripts/menu.js";
+        </script>
     </body>
 </html>
